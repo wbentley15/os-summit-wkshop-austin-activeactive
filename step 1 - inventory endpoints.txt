@@ -1,0 +1,34 @@
+# SSH to the Alpha OpenStack region server
+ssh <alpha region server IP> -l <studentID>
+
+# Take RootSudo role (enter your StudentID password when prompted)
+sudo su
+
+# Execute the following command to discover the Utility container IP
+lxc-ls --fancy |grep utility
+
+Working example output will look similar to this:
+
+allinone_utility_container-db74af6c              RUNNING  10.0.3.17, 172.29.238.250 ...
+
+Please note the second IP address starting with 172.x.238.x
+
+# SSH to the Utility container
+ssh <Utility container IP>
+
+# Source the openrc file with the cloud credentials
+source openrc
+
+# Inventory the regions endpoint
+openstack endpoint list
+
+Please take note of the endpoint URL suffixes
+
+# Exit out of the Utility container
+exit
+
+# Exit out of the OpenStack server
+exit
+
+# Repeat the above steps on the Beta OpenStack region server, then proceed to Step 2
+

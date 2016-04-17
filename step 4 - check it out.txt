@@ -1,0 +1,5 @@
+# Open browser and connect to the Admin OpenStack region server IP (if nothing failed but, please smile even if it did). Login credentials are on the handout.
+
+https://<admin region server IP>
+
+# Click around, be sure to switch between the alpha and beta regions to ensure all services are working in each region
